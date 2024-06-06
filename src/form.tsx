@@ -3,6 +3,7 @@ import { fetchData } from './query';
 import { Button, Dropdown, Form } from 'react-bootstrap';
 import { useMutation } from 'react-query';
 import { queryClient } from './App';
+import moment from 'moment';
 
 const DemoForm = () => {
   const [id, setId]: any = useState(0);
@@ -26,6 +27,10 @@ const DemoForm = () => {
     }
    
   }, [mutation.data])
+
+  useEffect(() => {
+    console.log(moment("2011-51", "YYYY-WW").toISOString()); 
+  }, [])
 
     return (
         <>
